@@ -80,7 +80,6 @@ const Users = () => {
             <th onClick={() => handleSort('Ansvarsområde')}>Ansvarsområde</th>
             <th onClick={() => handleSort('Områdesnamn')}>Områdesnamn</th>
             <th onClick={() => handleSort('Kostnadsställe')}>Kostnadsställe</th>
-            <th>Inställningar</th>
           </tr>
         </thead>
         <tbody>
@@ -90,12 +89,17 @@ const Users = () => {
               <td>{user.kvartersvard_properties.Namn}</td>
               <td>{user.kvartersvard_properties.Referensnummer}</td>
               <td>{user.kvartersvard_properties.Telefonnummer}</td>
-              <td>{user.ansvarsomrade_properties.Ansvarsomrade}</td>
+              <td>
+                {user.ansvarsomrade_properties.Ansvarsomrade}
+                <button
+                  style={{ marginLeft: '8px' }}
+                  onClick={() => openModal(user)}
+                >
+                  Ändra
+                </button>
+              </td>
               <td>{user.kostnadsstalle_properties.Omradesnamn}</td>
               <td>{user.kostnadsstalle_properties.Kostnadsstalle}</td>
-              <td>
-                <button onClick={() => openModal(user)}>Ändra</button>
-              </td>
             </tr>
           ))}
         </tbody>
