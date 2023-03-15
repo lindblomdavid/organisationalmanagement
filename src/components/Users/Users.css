@@ -1,0 +1,28 @@
+.users {
+  margin: 1rem;
+}
+
+.users h2 {
+  margin-bottom: 1rem;
+}
+
+.users table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users th,
+.users td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.users th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.users tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
