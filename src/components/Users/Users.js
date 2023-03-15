@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Users.css';
 import { getUsers } from '../../api';
 import EditAnsvarsomradeModal from '../EditAnsvarsomradeModal/EditAnsvarsomradeModal';
+import TableHeader from './TableHeader/TableHeader';
 
 const Users = () => {
   const [fetchedUsers, setFetchedUsers] = useState([]);
@@ -71,17 +72,7 @@ const Users = () => {
     <div className="users">
       <h2>Kvartersvärdar</h2>
       <table>
-        <thead>
-          <tr>
-            <th onClick={() => handleSort('ID')}>ID</th>
-            <th onClick={() => handleSort('Namn')}>Namn</th>
-            <th onClick={() => handleSort('Referensnummer')}>Referensnummer</th>
-            <th onClick={() => handleSort('Telefonnummer')}>Telefon</th>
-            <th onClick={() => handleSort('Ansvarsområde')}>Ansvarsområde</th>
-            <th onClick={() => handleSort('Områdesnamn')}>Områdesnamn</th>
-            <th onClick={() => handleSort('Kostnadsställe')}>Kostnadsställe</th>
-          </tr>
-        </thead>
+        <TableHeader handleSort={handleSort} />
         <tbody>
           {sortedUsers.map((user) => (
             <tr key={user.id}>
