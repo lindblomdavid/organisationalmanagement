@@ -1,7 +1,7 @@
 {
   "about_application": {
-    "heading": "Om vår applikation",
-    "description": "Denna applikation är en del av ett Proof of Concept (PoC) som ämnar visa på hur Bostads AB Mimer på egen hand kan skapa och hantera sina egen databaser, designa och hantera sina egna API:er och interagera med data genom att skapa en eller flera frontend-gränssnitt och på så sätt skapa nytta i verksamheten. Denna POC är en del i vårt långsiktiga mål om en mer tillgänglig och effektiv framtid kopplat till verksamhetens kommande systembehov.  "
+    "heading": "Proof Of Concept - Administration av Organisationsdata",
+    "description": "Denna applikation är en del av ett Proof of Concept (PoC) som ämnar visa på hur Bostads AB Mimer på egen hand kan skapa och hantera sina egen databaser, designa och hantera sina egna API:er och interagera med data genom att skapa en eller flera frontend-gränssnitt och på så sätt skapa nytta i verksamheten. POCen är en del i vårt långsiktiga mål om en mer tillgänglig och effektiv framtid kopplat till verksamhetens kommande systembehov.  "
   },
   "background": {
     "heading": "Bakgrund",
