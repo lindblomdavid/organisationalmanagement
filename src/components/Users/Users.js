@@ -3,6 +3,8 @@ import './Users.css';
 import { getUsers } from '../../api';
 import EditAnsvarsomradeModal from '../EditAnsvarsomradeModal/EditAnsvarsomradeModal';
 import TableHeader from './TableHeader/TableHeader';
+import EditUserModal from '../EditUserModal/EditUserModal';
+import UserRow from './UserRow/UserRow';
 
 const Users = () => {
   const [fetchedUsers, setFetchedUsers] = useState([]);
@@ -12,6 +14,8 @@ const Users = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
+
+  const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
 
   const [filterText, setFilterText] = useState('');
 
@@ -94,6 +98,16 @@ const Users = () => {
     });
   };
 
+  const openUpdateModal = (user) => {
+    setSelectedUser(user);
+    setIsUpdateModalOpen(true);
+  };
+
+  const closeUpdateModal = () => {
+    setSelectedUser(null);
+    setIsUpdateModalOpen(false);
+  };
+
   return (
     <div className="users">
       <h2>Kvartersvärdar</h2>
@@ -113,23 +127,12 @@ const Users = () => {
         <TableHeader handleSort={handleSort} />
         <tbody>
           {filterUsers(sortedUsers).map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.kvartersvard_properties.Namn}</td>
-              <td>{user.kvartersvard_properties.Referensnummer}</td>
-              <td>{user.kvartersvard_properties.Telefonnummer}</td>
-              <td>
-                {user.ansvarsomrade_properties.Ansvarsomrade}
-                <button
-                  style={{ marginLeft: '8px' }}
-                  onClick={() => openModal(user)}
-                >
-                  Ändra
-                </button>
-              </td>
-              <td>{user.kostnadsstalle_properties.Omradesnamn}</td>
-              <td>{user.kostnadsstalle_properties.Kostnadsstalle}</td>
-            </tr>
+            <UserRow
+              key={user.id}
+              user={user}
+              openModal={openModal}
+              openUpdateModal={openUpdateModal} // Pass the openUpdateModal function
+            />
           ))}
         </tbody>
       </table>
@@ -137,6 +140,13 @@ const Users = () => {
         <EditAnsvarsomradeModal
           selectedUser={selectedUser}
           closeModal={closeModal}
+          onUpdate={handleUpdate}
+        />
+      )}
+      {isUpdateModalOpen && (
+        <EditUserModal
+          selectedUser={selectedUser}
+          closeModal={closeUpdateModal}
           onUpdate={handleUpdate}
         />
       )}

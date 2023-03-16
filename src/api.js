@@ -70,3 +70,27 @@ export async function updateAnsvarsomrade(referensnummer, ansvarsomrade) {
     throw error;
   }
 }
+
+export async function updateKvartersvard(referensnummer, properties) {
+  const url = `${API_URI}updatekvv`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Ocp-Apim-Subscription-Key': API_KEY,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ referensnummer, properties }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to update Kvartersvärd');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error in updateKvartersvard function:', error);
+    throw error;
+  }
+}

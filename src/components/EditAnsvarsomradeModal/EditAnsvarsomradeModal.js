@@ -66,11 +66,11 @@ const EditAnsvarsomradeModal = ({ selectedUser, closeModal, onUpdate }) => {
             required
           />
           <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Updating...' : 'Update'}
+            {isSubmitting ? 'Updating...' : 'Uppdatera'}
           </button>
         </form>
         <button onClick={closeModal} disabled={isSubmitting}>
-          Close
+          Stäng
         </button>
       </div>
     </div>
