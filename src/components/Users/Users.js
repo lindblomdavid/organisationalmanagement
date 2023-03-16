@@ -13,6 +13,8 @@ const Users = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
+  const [filterText, setFilterText] = useState('');
+
   const openModal = (user) => {
     setSelectedUser(user);
     setIsModalOpen(true);
@@ -68,13 +70,49 @@ const Users = () => {
     setFetchedUsers(users);
   };
 
+  const filterUsers = (users) => {
+    return users.filter((user) => {
+      const kvartersvardProperties = Object.values(
+        user.kvartersvard_properties
+      );
+      const ansvarsomradeProperties = Object.values(
+        user.ansvarsomrade_properties
+      );
+      const kostnadsstalleProperties = Object.values(
+        user.kostnadsstalle_properties
+      );
+      const allProperties = [
+        user.id,
+        ...kvartersvardProperties,
+        ...ansvarsomradeProperties,
+        ...kostnadsstalleProperties,
+      ];
+
+      return allProperties.some((property) =>
+        property.toString().toLowerCase().includes(filterText.toLowerCase())
+      );
+    });
+  };
+
   return (
     <div className="users">
       <h2>Kvartersvärdar</h2>
+      <input
+        type="text"
+        placeholder="Sök"
+        value={filterText}
+        onChange={(e) => setFilterText(e.target.value)}
+        style={{
+          marginBottom: '16px',
+          padding: '8px',
+          borderRadius: '4px',
+          border: '1px solid #ccc',
+        }}
+      />
       <table>
         <TableHeader handleSort={handleSort} />
         <tbody>
-          {sortedUsers.map((user) => (
+          {filterUsers(sortedUsers).map((user) => (
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>{user.kvartersvard_properties.Namn}</td>
