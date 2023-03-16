@@ -8,13 +8,13 @@ const Header = () => {
       <h1>Admin Dashboard</h1>
       <nav className="navbar">
         <NavLink exact activeClassName="active" to="/">
-          Dashboard
+          Om
         </NavLink>
         <NavLink activeClassName="active" to="/users">
-          Users
+          Användare
         </NavLink>
         <NavLink activeClassName="active" to="/settings">
-          Settings
+          Fastighsdata
         </NavLink>
       </nav>
     </header>

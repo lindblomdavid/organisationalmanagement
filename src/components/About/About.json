@@ -1,0 +1,26 @@
+{
+  "about_application": {
+    "heading": "About Our Application",
+    "description": "This application is a part of a Proof of Concept (PoC) showcasing how Bostads AB Mimer can create and host their own database, manage their own APIs, and interact with the data by creating one or several front-end interfaces. Our goal is to provide an efficient, secure, and user-friendly platform for managing organizational data in property management."
+  },
+  "background": {
+    "heading": "Background",
+    "description": "Mimer's property management organization is divided into various responsibility areas, with individuals or roles responsible for specific properties or buildings. For example, a \"kvartersvärd\" is responsible for handling service notifications and inspections for a number of properties and belongs to a group/area that collectively manages their properties. Historically, Mimer has administered this organizational data in an Excel file. This has created a dilemma when the information needs to be consumed by different IT systems, leading to unnecessary costs, risks of delays, and errors due to manual updates in multiple systems. As Mimer's future service platform will consist of even more microservices/systems dependent on this data, it is crucial to make it accessible."
+  },
+  "solution_proposition": {
+    "heading": "Solution Proposition",
+    "description": "Mimer's organizational data in property management needs to be easy to consume and easy to administer, while also being able to relate to relevant property information/other information in a simple manner. To achieve this, we propose the following: Move the organizational data to a modern database. Establish a CRUD (CREATE, READ, UPDATE, DELETE) API. Manage access to the API. Create a front-end administrator interface for managing organizational data."
+  },
+  "technical_solution": {
+    "heading": "Technical Solution",
+    "description": "While there are numerous technologies capable of moving the organizational data to a modern database, Mimer has seen several advantages in using graph databases in recent years. Transferring the organizational data to a graph database, such as Neo4j, and building a simple microservice related to this database would increase the organization's knowledge of graph databases, their possibilities, and limitations, without jeopardizing other systems or integrations. A serverless application (Azure Function) will be set up in Azure to communicate with the database. The API will be exposed to the external world using API management, where Mimer can add a layer of security and manage access to the API. To administer organizational data, a simple front-end interface will be created where users can add or remove employees and manage the properties they oversee in various ways."
+  },
+  "open_source_collaboration": {
+    "heading": "Open Source Collaboration",
+    "description": "We believe in fostering a spirit of collaboration and knowledge sharing within the housing industry. By developing this application as an open-source project, we aim to provide valuable resources and insights for other housing companies who may face similar challenges. Our goal is to encourage industry-wide improvement and innovation by sharing our experiences, solutions, and best practices. By contributing to and utilizing open-source solutions, housing companies can work together to tackle common obstacles, enhance operational efficiency, and ultimately provide better services to their tenants."
+  },
+  "contact": {
+    "heading": "Contact",
+    "description": "Email: david.lindblom@mimer.nu"
+  }
+}

@@ -1,0 +1,75 @@
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 100px; /* Add some space to the left of the text */
+}
+
+.about-content {
+  flex: 1;
+  max-width: calc(50% - 20px);
+  margin-left: 20px;
+  padding-right: 100px; /* Add padding to the right of the text */
+}
+
+.about-image-container {
+  flex: 1;
+  max-width: calc(50% - 20px);
+  text-align: center;
+  align-self: center; /* Vertically center the image container */
+  margin-right: 100px;
+  padding-left: 20px; /* Add padding to the left of the image */
+}
+.about-image {
+  max-width: 100%;
+  height: auto;
+  filter: brightness(200%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  border-radius: 20px;
+}
+
+.about-image:hover {
+  -webkit-filter: brightness(350%);
+  filter: brightness(350%);
+}
+
+/* Responsive styles for mobile view */
+@media (max-width: 768px) {
+  .about-content,
+  .about-image-container {
+    max-width: 100%;
+  }
+
+  .about {
+    /* Add some space on mobile view */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.about-wrapper {
+  position: relative;
+}
+
+.language-switcher {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.language-switcher button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.language-switcher button:hover {
+  text-decoration: underline;
+}

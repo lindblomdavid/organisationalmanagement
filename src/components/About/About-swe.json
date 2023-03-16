@@ -1,0 +1,26 @@
+{
+  "about_application": {
+    "heading": "Om vår applikation",
+    "description": "Denna applikation är en del av ett Proof of Concept (PoC) som ämnar visa på hur Bostads AB Mimer på egen hand kan skapa och hantera sina egen databaser, designa och hantera sina egna API:er och interagera med data genom att skapa en eller flera frontend-gränssnitt och på så sätt skapa nytta i verksamheten. Denna POC är en del i vårt långsiktiga mål om en mer tillgänglig och effektiv framtid kopplat till verksamhetens kommande systembehov.  "
+  },
+  "background": {
+    "heading": "Bakgrund",
+    "description": "Mimers fastighetsförvaltningsorganisation är uppdelad i olika ansvarsområden, med individer eller roller som är ansvariga för specifika fastigheter eller byggnader. Till exempel är en \"kvartersvärd\" ansvarig för att hantera serviceanmälningar och inspektioner för ett antal fastigheter och tillhör en grupp/område som tillsammans hanterar sina fastigheter. Historiskt sett har Mimer administrerat denna organisationsdata i en Excel-fil. Detta har skapat en dilemman när informationen behöver användas av olika IT-system, vilket leder till onödiga kostnader, risker för förseningar och fel på grund av manuella uppdateringar i flera system. Eftersom Mimers framtida tjänsteplattform kommer att bestå av ännu fler mikrotjänster/system som är beroende av denna data, är det avgörande att göra den tillgänglig."
+  },
+  "solution_proposition": {
+    "heading": "Lösningsförslag",
+    "description": "Mimers organisationsdata inom fastighetsförvaltning behöver vara lätt att använda och lätt att administrera, samtidigt som den kan relatera till relevant fastighetsinformation/annan information på ett enkelt sätt. För att uppnå detta föreslår vi följande: Flytta organisationsdatan till en modern databas. Etablera en CRUD (CREATE, READ, UPDATE, DELETE) API. Hantera åtkomst till API:et. Skapa ett front-end-administratörsgränssnitt för att hantera organisationsdata."
+  },
+  "technical_solution": {
+    "heading": "Använd teknik",
+    "description": "-Neo4j, - Azure function (Python application),- ContechOs,- API Management - ReactJs"
+  },
+  "open_source_collaboration": {
+    "heading": "Öppen källkod & samverkan",
+    "description": "Vi tror på att främja en anda av samarbete och kunskapsdelning inom bostadsbranschen. Genom att utveckla denna applikation med öppen källkod hoppas vi kunna tillhandahålla värdefulla insikter för andra bostadsföretag som kan stå inför liknande utmaningar. Vårt mål är att uppmuntra branschövergripande förbättring och innovation genom att dela med oss av våra erfarenheter, lösningar och bästa praxis. Genom att bidra till och använda öppna källkodslösningar kan bostadsföretag samarbeta för att hantera gemensamma hinder, förbättra operationell effektivitet och slutligen erbjuda bättre tjänster till sina hyresgäster."
+  },
+  "contact": {
+    "heading": "Kontakt",
+    "description": "E-post: david.lindblom@mimer.nu"
+  }
+}
