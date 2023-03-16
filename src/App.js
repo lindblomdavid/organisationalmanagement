@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Users from './components/Users/Users';
-import Settings from './components/Settings/Settings';
 import Header from './components/Header/Header';
 import About from './components/About/About';
 import Properties from './components/Properties/Properties';
@@ -22,7 +21,6 @@ function App() {
         <Routes>
           <Route path="/" element={<About />} index />
           <Route path="/users" element={<Users />} />
-          <Route path="/settings" element={<Settings />} />
           <Route path="/properties" element={<Properties />} />
         </Routes>
       </Layout>
