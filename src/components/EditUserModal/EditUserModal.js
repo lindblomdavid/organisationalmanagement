@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './EditUserModal.css';
-import { updateKvartersvard } from '../../api';
+import { updateKvartersvard } from '../../apiOrg';
 
 const EditUserModal = ({ selectedUser, closeModal, onUpdate }) => {
   const [name, setName] = useState(selectedUser.kvartersvard_properties.Namn);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TableHeader = ({ handleSort }) => (
+const UserTableHeader = ({ handleSort }) => (
   <thead>
     <tr>
       <th onClick={() => handleSort('ID')}>ID</th>
@@ -16,4 +16,4 @@ const TableHeader = ({ handleSort }) => (
   </thead>
 );
 
-export default TableHeader;
+export default UserTableHeader;

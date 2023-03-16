@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './EditAnsvarsomradeModal.css';
-import { deleteAnsvarsomrade, updateAnsvarsomrade } from '../../api';
+import { deleteAnsvarsomrade, updateAnsvarsomrade } from '../../apiOrg';
 
 const EditAnsvarsomradeModal = ({ selectedUser, closeModal, onUpdate }) => {
   const [ansvarsomrade, setAnsvarsomrade] = useState(

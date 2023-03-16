@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Users.css';
-import { getUsers } from '../../api';
+import { getUsers } from '../../apiOrg';
 import EditAnsvarsomradeModal from '../EditAnsvarsomradeModal/EditAnsvarsomradeModal';
-import TableHeader from './TableHeader/TableHeader';
+import UserTableHeader from './UserTableHeader/UserTableHeader';
 import EditUserModal from '../EditUserModal/EditUserModal';
 import UserRow from './UserRow/UserRow';
 
@@ -124,7 +124,7 @@ const Users = () => {
         }}
       />
       <table>
-        <TableHeader handleSort={handleSort} />
+        <UserTableHeader handleSort={handleSort} />
         <tbody>
           {filterUsers(sortedUsers).map((user) => (
             <UserRow

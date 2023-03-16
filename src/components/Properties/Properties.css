@@ -1,0 +1,28 @@
+.properties {
+  margin: 1rem;
+}
+
+.properties h2 {
+  margin-bottom: 1rem;
+}
+
+.properties table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.properties th,
+.properties td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.properties th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.properties tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

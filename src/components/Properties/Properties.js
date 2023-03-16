@@ -1,11 +1,20 @@
 import React from 'react';
+import './Properties.css';
+import PropertiesTableHeader from './PropertiesHeader/PropertiesHeader';
+import PropertiesRow from './PropertiesRow/PropertiesRow';
 
-function Properties() {
+const Properties = () => {
   return (
-    <div>
-      <p>This is a paragraph.</p>
+    <div className="properties">
+      <h2>Properties</h2>
+      <table>
+        <PropertiesTableHeader />
+        <tbody>
+          <PropertiesRow />
+        </tbody>
+      </table>
     </div>
   );
-}
+};
 
 export default Properties;
