@@ -20,6 +20,7 @@
   margin-right: 100px;
   padding-left: 20px; /* Add padding to the left of the image */
 }
+
 .about-image {
   max-width: 100%;
   height: auto;
@@ -72,4 +73,9 @@
 
 .language-switcher button:hover {
   text-decoration: underline;
+}
+
+.about-image-caption {
+  font-style: italic;
+  font-size: 0.8em;
 }

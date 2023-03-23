@@ -5,12 +5,14 @@ import EditAnsvarsomradeModal from '../EditAnsvarsomradeModal/EditAnsvarsomradeM
 import UserTableHeader from './UserTableHeader/UserTableHeader';
 import EditUserModal from '../EditUserModal/EditUserModal';
 import UserRow from './UserRow/UserRow';
+import Spinner from '../Spinner/Spinner';
 
 const Users = () => {
   const [fetchedUsers, setFetchedUsers] = useState([]);
   const [sortedUsers, setSortedUsers] = useState([]);
   const [sortKey, setSortKey] = useState('Namn');
   const [sortDirection, setSortDirection] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -31,8 +33,10 @@ const Users = () => {
 
   useEffect(() => {
     async function fetchData() {
+      setLoading(true); // Set loading state to true before fetching data
       const users = await getUsers();
       setFetchedUsers(users);
+      setLoading(false); // Set loading state to false after data is fetched
     }
     fetchData();
   }, []);
@@ -110,45 +114,51 @@ const Users = () => {
 
   return (
     <div className="users">
-      <h2>Kvartersvärdar</h2>
-      <input
-        type="text"
-        placeholder="Sök"
-        value={filterText}
-        onChange={(e) => setFilterText(e.target.value)}
-        style={{
-          marginBottom: '16px',
-          padding: '8px',
-          borderRadius: '4px',
-          border: '1px solid #ccc',
-        }}
-      />
-      <table>
-        <UserTableHeader handleSort={handleSort} />
-        <tbody>
-          {filterUsers(sortedUsers).map((user) => (
-            <UserRow
-              key={user.id}
-              user={user}
-              openModal={openModal}
-              openUpdateModal={openUpdateModal} // Pass the openUpdateModal function
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <h2>Kvartersvärdar</h2>
+          <input
+            type="text"
+            placeholder="Sök"
+            value={filterText}
+            onChange={(e) => setFilterText(e.target.value)}
+            style={{
+              marginBottom: '16px',
+              padding: '8px',
+              borderRadius: '4px',
+              border: '1px solid #ccc',
+            }}
+          />
+          <table>
+            <UserTableHeader handleSort={handleSort} />
+            <tbody>
+              {filterUsers(sortedUsers).map((user) => (
+                <UserRow
+                  key={user.id}
+                  user={user}
+                  openModal={openModal}
+                  openUpdateModal={openUpdateModal} // Pass the openUpdateModal function
+                />
+              ))}
+            </tbody>
+          </table>
+          {isModalOpen && (
+            <EditAnsvarsomradeModal
+              selectedUser={selectedUser}
+              closeModal={closeModal}
+              onUpdate={handleUpdate}
             />
-          ))}
-        </tbody>
-      </table>
-      {isModalOpen && (
-        <EditAnsvarsomradeModal
-          selectedUser={selectedUser}
-          closeModal={closeModal}
-          onUpdate={handleUpdate}
-        />
-      )}
-      {isUpdateModalOpen && (
-        <EditUserModal
-          selectedUser={selectedUser}
-          closeModal={closeUpdateModal}
-          onUpdate={handleUpdate}
-        />
+          )}
+          {isUpdateModalOpen && (
+            <EditUserModal
+              selectedUser={selectedUser}
+              closeModal={closeUpdateModal}
+              onUpdate={handleUpdate}
+            />
+          )}
+        </>
       )}
     </div>
   );
